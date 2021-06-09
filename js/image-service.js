@@ -51,14 +51,19 @@ function getImages() {
     return gImgs;
 }
 
-// function getMemes() {
-//     return gMemes;
-// }
-
 
 function getMemeById(imageId) {
     var meme = gMemes.find(function(meme) {
         return imageId === meme.selectedImgId
     })
     return meme
+}
+
+
+function getFilteredImages(val) {
+    var filteredImages = gImgs.filter(function(image) {
+        return image.keywords.includes(val)
+    });
+    return filteredImages;
+
 }
