@@ -10,31 +10,24 @@
 </head>
 
 <body onload="init()">
-    <h1>hello html</h1>
-    <script src="js/image-controller.js"></script>
+    <section class="header">
+        <nav>
+            <div class="header-menu grid1">
+                <img class="logo" src="images/LOGO.png">
+                <ul class=" nav-menu clean-list flex space-between">
+                    <li><a class="flex justify-center" href="#">Gallery</a></li>
+                    <li><a class="flex justify-center" href="#">Memes</a></li>
+                    <li><a class="flex justify-center" href="#">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <section class="main">
+        <div class="images grid2">
+        </div>
+    </section>
 </body>
-<section class="main">
-    <div class="images grid images-wrapper">
-        <img src="images/1.jpg">
-        <img src="images/2.jpg">
-        <img src="images/3.jpg">
-        <img src="images/4.jpg">
-        <img src="images/5.jpg">
-        <img src="images/6.jpg">
-        <img src="images/7.jpg">
-        <img src="images/8.jpg">
-        <img src="images/9.jpg">
-        <img src="images/10.jpg">
-        <img src="images/11.jpg">
-        <img src="images/12.jpg">
-        <img src="images/13.jpg">
-        <img src="images/14.jpg">
-        <img src="images/15.jpg">
-        <img src="images/16.jpg">
-        <img src="images/17.jpg">
-        <img src="images/18.jpg">
-
-    </div>
-</section>
+<script src="js/image-service.js"></script>
+<script src="js/image-controller.js"></script>
 
 </html>
