@@ -26,7 +26,7 @@ rest of the  feat. -->
     </section>
     <section class="aside search-area">
         <nav>
-            <input type="text" class="search-area-input" placeholder="SEARCH" onkeyup="onFilter(this.value)">
+            <!-- <input type="text" class="search-area-input" placeholder="SEARCH" onkeyup="onFilter(this.value)"> -->
         </nav>
     </section>
     <section class="main">
@@ -40,7 +40,9 @@ rest of the  feat. -->
             <!-- <canvas id="my-canvas" onclick="draw(event)" hidden></canvas> -->
             <canvas id="my-canvas" hidden></canvas>
         </div>
-        <div class="canvas-controls" hidden></div>
+        <div class="canvas-controls" hidden>
+            <input type="text" class="text-line" placeholder="Text-line" onkeyup="onTextLine(this.value)">
+        </div>
     </div>
 </body>
 <script src="js/canvas-service.js"></script>
