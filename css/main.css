@@ -38,9 +38,19 @@ body h1 {
 }
 
 
+/* search gallery */
+
+.search-area-input {
+    margin-top: 2vh;
+    margin-left: 10vw;
+    line-height: 3vh;
+}
+
+
 /* image gallery */
 
 .grid2 {
+    margin-top: 2vh;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: 250px;
@@ -110,9 +120,9 @@ canvas {
 
 .canvas-container {
     /* margin: 20vh 30vw; */
-    width: 15vw;
+    width: 450px;
     margin-right: 10px;
-    height: 30vh;
+    height: 450px;
     border: 1px solid red;
 }
 
@@ -128,8 +138,8 @@ canvas {
     margin-left: 10px;
     border: 1px solid black;
     /* margin-left: 20px; */
-    width: 30vw;
-    height: 30vh;
+    width: 450px;
+    height: 450px;
 }
 
 
