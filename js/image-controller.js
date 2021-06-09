@@ -16,10 +16,3 @@ function renderImagesWithMemes() {
     });
     document.querySelector('.images').innerHTML = strHtmls.join('');
 };
-
-
-// function renderMeme() {
-//     var memes = getMemes();
-//     console.log(memes);
-
-// }
