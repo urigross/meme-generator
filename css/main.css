@@ -110,10 +110,18 @@ canvas {
 
 .canvas-container {
     /* margin: 20vh 30vw; */
-    width: 30vw;
+    width: 15vw;
     margin-right: 10px;
     height: 30vh;
     border: 1px solid red;
+}
+
+#my-canvas {
+    /* width: 20vw; */
+    /* height: 30vh; */
+    width: inherit;
+    height: inherit;
+    object-fit: fill;
 }
 
 .canvas-controls {

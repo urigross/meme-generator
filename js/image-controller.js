@@ -21,7 +21,7 @@ function onMemeEditor(imageId) {
     hideImages();
     showCanvas();
     showCanvasControls();
-    drawImage();
+    drawImage(imageId);
 }
 
 
