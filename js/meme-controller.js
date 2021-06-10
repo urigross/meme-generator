@@ -13,7 +13,7 @@ function renderImage(imageId) {
     img.src = `images/${imageId}.jpg`;
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-        drawText(150, 50);
+        drawText();
     }
 }
 
@@ -55,6 +55,8 @@ function onType(txt) {
 
 function onToggleRow() {
     console.log('toggle row');
+    toggleY();
+    renderImage(gCurrImageId);
 }
 
 function onAddRow() {
