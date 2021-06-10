@@ -21,14 +21,18 @@ function onMemeEditor(imageId) {
     hideImages();
     showCanvas();
     showCanvasControls();
-    drawImage(imageId);
+    renderImage(imageId);
+    imageIdToTextLine(imageId);
 }
-
-
+// passing image id to Meme control text-field by a dataSet
+function imageIdToTextLine(imageId) {
+    var elTxtLine = document.querySelector('.text-line');
+    elTxtLine.dataset.imageId = imageId;
+}
 
 function showCanvasControls() {
     var elCanvasCtrs = document.querySelector('.canvas-controls');
-    elCanvasCtrs.hidden = false;
+    elCanvasCtrs.style.opacity = "1";
 }
 
 function showCanvas() {

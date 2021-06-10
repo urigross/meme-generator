@@ -25,39 +25,22 @@ var gImgs = [
 
 
 ];
-var gMemes = [{
-        selectedImgId: 5,
-        selectedLineIdx: 0,
-        lines: [{
-            txt: 'I never eat Falafel',
-            size: 20,
-            align: 'left',
-            color: 'red'
-        }]
-    },
-    {
-        selectedImgId: 4,
-        selectedLineIdx: 0,
-        lines: [{
-            txt: 'Thoughts for: after finishing sprint 2',
-            size: 20,
-            align: 'left',
-            color: 'red'
-        }]
-    }
-];
+var gMeme = {
+    selectedImgId: 5,
+    selectedLineIdx: 0,
+    lines: [{
+        txt: '',
+        size: 20,
+        align: 'left',
+        color: 'red'
+    }]
+};
 
 function getImages() {
     return gImgs;
 }
 
 
-function getMemeById(imageId) {
-    var meme = gMemes.find(function(meme) {
-        return imageId === meme.selectedImgId
-    })
-    return meme
-}
 
 
 function getFilteredImages(val) {
@@ -67,3 +50,11 @@ function getFilteredImages(val) {
     return filteredImages;
 
 }
+
+function updateMeme(txt) {
+
+    gMeme.lines[0].txt = txt; // static for now..
+    // gMeme.lines[selectedLineIdx].txt = txt; later...
+
+    //TODO: compelete
+};

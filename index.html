@@ -26,7 +26,7 @@ rest of the  feat. -->
     </section>
     <section class="aside search-area">
         <nav>
-            <!-- <input type="text" class="search-area-input" placeholder="SEARCH" onkeyup="onFilter(this.value)"> -->
+            <input type="text" class="search-area-input" placeholder="SEARCH" onkeyup="onFilter(this.value)">
         </nav>
     </section>
     <section class="main">
@@ -38,10 +38,27 @@ rest of the  feat. -->
         <div class="canvas-container" hidden>
             <!-- <canvas id="my-canvas" height="450" width="450" onclick="draw(event)" hidden></canvas> -->
             <!-- <canvas id="my-canvas" onclick="draw(event)" hidden></canvas> -->
-            <canvas id="my-canvas" hidden></canvas>
+            <canvas id="my-canvas" height="400" width="400" hidden></canvas>
         </div>
-        <div class="canvas-controls" hidden>
-            <input type="text" class="text-line" placeholder="Text-line" onkeyup="onTextLine(this.value)">
+        <div class="canvas-controls grid3">
+            <input type="text" class="text-line" placeholder="Text-line" onkeyup="onType(this.value)">
+            <img class="toggle-row" onclick="onToggleRow()" src="images/ICONS/up-and-down-opposite-double-arrows-side-by-side.png">
+            <img src="images/ICONS/add.png" onclick="onAddRow()" alt="" class="add-row">
+            <img src="images/ICONS/trash.png" onclick="onDelRow()" alt="" class="delete-row">
+            <img src="images/ICONS/increase font - icon.png" onclick="onFontUp()" alt="" class="font-up">
+            <img src="images/ICONS/decrease font - icon.png" onclick="onFontDown()" alt="" class="font-down">
+            <img src="images/ICONS/align-to-left.png" onclick="onTxtLeft()" alt="" class="text-left">
+            <img src="images/ICONS/align-to-right.png" onclick="onTxtRignt()" alt="" class="text-right">
+            <img src="images/ICONS/center-text-alignment.png" onclick="onTxtCenter()" alt="" class="text-center">
+            <!-- <select class="flex justify-center change-font-ul" onchange="set(this.value)"> -->
+            <select class="flex justify-center change-font" onchange="setFontFam(value)">
+                    <option value="font1"><h3>font1</h3></option>
+                    <option value="font2"><h3>font2</h3></option>
+                </select>
+            <!-- <img src="images/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="" class="change-font"> -->
+            <img src="images/ICONS/text stroke.png" alt="" onclick="onTextEffect()" class="text-effect">
+            <img src="images/ICONS/paint-board-and-brush.png" onclick="onTxtColor()" alt="" class="text-color">
+            <button class="share" onclick="onShare()">Share</button>
         </div>
     </div>
 </body>
