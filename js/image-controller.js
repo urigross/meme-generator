@@ -1,11 +1,10 @@
 'use strict';
 
 function init() {
-    renderImagesWithMemes();
-
+    renderImageGallery();
 }
 
-function renderImagesWithMemes(images) {
+function renderImageGallery(images) {
     if (!images) var images = getImages();
     var strHtmls = images.map(function(image) {
         return `<div class="image-container">
@@ -16,48 +15,55 @@ function renderImagesWithMemes(images) {
     document.querySelector('.images').innerHTML = strHtmls.join('');
 };
 
+function onGallery() {
+    console.log('im in image gallery')
+    toggleSearchAreaClass();
+    toggleImagesClass();
+    toggleCanvasContainerClass();
+    toggleCanvasControls();
+    renderImageGallery();
+}
+
 function onMemeEditor(imageId) {
-    hideSearch()
-    hideImages();
-    showCanvas();
-    showCanvasControls();
+    toggleSearchAreaClass();
+    toggleImagesClass();
+    toggleCanvasContainerClass();
+    toggleCanvasControls();
     renderImage(imageId);
-    imageIdToTextLine(imageId);
-}
-// passing image id to Meme control text-field by a dataSet
-function imageIdToTextLine(imageId) {
-    var elTxtLine = document.querySelector('.text-line');
-    elTxtLine.dataset.imageId = imageId;
 }
 
-function showCanvasControls() {
+
+// function showCanvasControls() {
+function toggleCanvasControls() {
     var elCanvasCtrs = document.querySelector('.canvas-controls');
-    elCanvasCtrs.style.opacity = "1";
+    console.log(elCanvasCtrs.style);
+    !elCanvasCtrs.style.opacity ? elCanvasCtrs.style.opacity = "1" : elCanvasCtrs.style.opacity = "0";
 }
 
-function showCanvas() {
+function toggleCanvasContainerClass() {
     var elCanvas = document.querySelector('.canvas-container');
-    elCanvas.hidden = false;
-    showMyCanvas();
+    elCanvas.hidden ? elCanvas.hidden = false : elCanvas.hidden = true;
+    toggleMyCanvasClass(elCanvas.hidden);
 };
 
-function showMyCanvas() {
+function toggleMyCanvasClass(hiddenState) {
     var elMyCanvas = document.querySelector('#my-canvas');
-    elMyCanvas.hidden = false;
+    elMyCanvas.hidden = hiddenState;
 }
 
-function hideSearch() {
+// function hideSearch() {
+function toggleSearchAreaClass() {
     var eleSearch = document.querySelector('.search-area');
-    eleSearch.style.display = 'none';
+    eleSearch.style.display === 'none' ? eleSearch.style.display = 'block' : eleSearch.style.display = 'none';
 }
 
-function hideImages() {
+function toggleImagesClass() {
     var eleImages = document.querySelector('.images');
-    eleImages.style.display = 'none';
+    eleImages.style.display === 'none' ? eleImages.style.display = 'grid' : eleImages.style.display = 'none';
 }
 
 function onFilter(txt) {
     console.log(txt);
-    if (txt) var filteredImages = getFilteredImages(txt);
-    renderImagesWithMemes(filteredImages);
+    if (txt) var filteredImages = getFilteredImages(txt.toLowerCase());
+    renderImageGallery(filteredImages);
 }

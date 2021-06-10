@@ -1,38 +1,28 @@
-'strict use';
-var gCanvas = document.querySelector('#my-canvas');
-var gCtx = gCanvas.getContext('2d');
+'use stirct';
+
 var gCurrImageId;
-
-function renderImage(imageId) {
-    gCurrImageId = imageId;
-    img = new Image();
-    img.src = `images/${imageId}.jpg`;
-    img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-        drawText(gMeme.lines[0].txt, 150, 50);
-
-    }
-}
 
 function onTextLine(txt) {
     drawText(txt, 180, 50);
 }
 
-function drawText(text, x, y) {
-    gCtx.lineWidth = 1
-    gCtx.strokeStyle = 'black'
-    gCtx.fillStyle = 'white'
-    gCtx.font = '20px Impact'
-    gCtx.textAlign = 'center'
-    gCtx.fillText(text, x, y)
-    gCtx.strokeText(text, x, y)
+function renderImage(imageId) {
+    console.log(gCurrImageId);
+    gCurrImageId = imageId;
+    var img = new Image();
+    img.src = `images/${imageId}.jpg`;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+        drawText(150, 50);
+    }
 }
+
+
 
 function onType(txt) {
     updateMeme(txt);
     renderImage(gCurrImageId);
     // TODO: compelete all functionality
-
 }
 
 function onToggleRow() {
@@ -48,10 +38,14 @@ function onDelRow() {
 }
 
 function onFontUp() {
+    updateFontSize(1);
+    renderImage(gCurrImageId);
     console.log('increasing font');
 }
 
 function onFontDown() {
+    updateFontSize(-1);
+    renderImage(gCurrImageId);
     console.log('Decreasing font');
 }
 

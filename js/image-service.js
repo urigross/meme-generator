@@ -25,22 +25,10 @@ var gImgs = [
 
 
 ];
-var gMeme = {
-    selectedImgId: 5,
-    selectedLineIdx: 0,
-    lines: [{
-        txt: '',
-        size: 20,
-        align: 'left',
-        color: 'red'
-    }]
-};
 
 function getImages() {
     return gImgs;
 }
-
-
 
 
 function getFilteredImages(val) {
@@ -50,11 +38,3 @@ function getFilteredImages(val) {
     return filteredImages;
 
 }
-
-function updateMeme(txt) {
-
-    gMeme.lines[0].txt = txt; // static for now..
-    // gMeme.lines[selectedLineIdx].txt = txt; later...
-
-    //TODO: compelete
-};
