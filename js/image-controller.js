@@ -24,32 +24,7 @@ function onGallery() {
     renderImageGallery();
 }
 
-function onMemeEditor(imageId) {
-    toggleSearchAreaClass();
-    toggleImagesClass();
-    toggleCanvasContainerClass();
-    toggleCanvasControls();
-    renderImage(imageId);
-}
 
-
-// function showCanvasControls() {
-function toggleCanvasControls() {
-    var elCanvasCtrs = document.querySelector('.canvas-controls');
-    console.log(elCanvasCtrs.style);
-    !elCanvasCtrs.style.opacity ? elCanvasCtrs.style.opacity = "1" : elCanvasCtrs.style.opacity = "0";
-}
-
-function toggleCanvasContainerClass() {
-    var elCanvas = document.querySelector('.canvas-container');
-    elCanvas.hidden ? elCanvas.hidden = false : elCanvas.hidden = true;
-    toggleMyCanvasClass(elCanvas.hidden);
-};
-
-function toggleMyCanvasClass(hiddenState) {
-    var elMyCanvas = document.querySelector('#my-canvas');
-    elMyCanvas.hidden = hiddenState;
-}
 
 // function hideSearch() {
 function toggleSearchAreaClass() {
