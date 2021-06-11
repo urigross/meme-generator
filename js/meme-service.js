@@ -32,7 +32,9 @@ function drawText() {
 }
 
 function toggleY() {
+    if (gY >= 380) gY = 50;
     gY += gMeme.lines[0].size + 10;
+    console.log('gY', gY);
 
 }
 
