@@ -2,8 +2,29 @@
 
 var gCurrImageId;
 
-function onTextLine(txt) {
-    drawText(txt, 180, 50);
+// function onTextLine(txt) {
+//     // drawText(txt, 180, 50);
+//     drawText()
+// }
+
+function drawText() {
+    var idx = 0
+    gMeme.lines.forEach(line => {
+        gCtx.lineWidth = 1;
+        gCtx.strokeStyle = 'black';
+        gCtx.fillStyle = 'white';
+        gCtx.font = `${gMeme.lines[0].size}px Impact`;
+        gCtx.textAlign = 'center';
+        console.log(line.txt);
+        gCtx.fillText(line.txt, gX, getLineYAxis(idx));
+        gCtx.strokeText(line.txt, gX, getLineYAxis(idx));
+        idx++;
+    });
+}
+
+function getLineYAxis(idx) {
+    var baseY = 80;
+    return idx * 100 + baseY;
 }
 
 function renderImage(imageId) {
@@ -21,14 +42,13 @@ function onMemeEditor(imageId) {
     toggleImagesClass();
     toggleCanvasContainerClass();
     toggleCanvasControls();
-    updateMeme('');
+    updateCurrLineText('');
     renderImage(imageId);
 }
 
 
 function toggleCanvasControls() {
     var elCanvasCtrs = document.querySelector('.canvas-controls');
-    console.log(elCanvasCtrs.style);
     !elCanvasCtrs.style.opacity ? elCanvasCtrs.style.opacity = "1" : elCanvasCtrs.style.opacity = "0";
 }
 
@@ -47,14 +67,14 @@ function toggleMyCanvasClass(hiddenState) {
 
 
 function onType(txt) {
-    updateMeme(txt);
+    updateCurrLineText(txt);
     renderImage(gCurrImageId);
     // TODO: compelete all functionality
 }
 
 function onToggleRow() {
     console.log('toggle row');
-    toggleY();
+    toggleLineIdx();
     renderImage(gCurrImageId);
 }
 
