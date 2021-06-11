@@ -7,7 +7,6 @@ function onTextLine(txt) {
 }
 
 function renderImage(imageId) {
-    console.log(gCurrImageId);
     gCurrImageId = imageId;
     var img = new Image();
     img.src = `images/${imageId}.jpg`;
@@ -59,8 +58,9 @@ function onToggleRow() {
     renderImage(gCurrImageId);
 }
 
-function onAddRow() {
-    console.log('adding row');
+function onAddLine() {
+    console.log('adding line');
+    addLine();
 }
 
 function onDelRow() {
