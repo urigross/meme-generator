@@ -9,8 +9,9 @@ function drawRect() {
     if (gMeme.lines.length <= 1) return;
     gCtx.beginPath()
     var rectY = gMeme.lines[gMeme.selectedLineIdx].pos.y - gMeme.lines[gMeme.selectedLineIdx].size * 1.1;
-    var rectX = gCanvas.clientWidth / 2 - gMeme.lines[gMeme.selectedLineIdx].size * gMeme.lines[gMeme.selectedLineIdx].txt.length * 0.3;
-    var rectWidth = gCanvas.clientWidth - (rectX * 2);
+    // var rectX = gCanvas.clientWidth / 2 - gMeme.lines[gMeme.selectedLineIdx].size * gMeme.lines[gMeme.selectedLineIdx].txt.length * 0.3;
+    var rectX = 10;
+    var rectWidth = gCanvas.clientWidth - 20;
     var rectHeight = 1.5 * gMeme.lines[gMeme.selectedLineIdx].size;
     gCtx.lineWidth = 5;
     gCtx.rect(rectX, rectY, rectWidth, rectHeight);
