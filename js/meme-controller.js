@@ -33,7 +33,7 @@ function drawText() {
     gMeme.lines.forEach(line => {
         gCtx.lineWidth = 2;
         gCtx.strokeStyle = line.color;
-        gCtx.fillStyle = line.color;
+        gCtx.fillStyle = line.strokeColor;
         gCtx.font = `${line.size}px ${line.fontFam}`;
         gCtx.textAlign = line.align;
         gCtx.fillText(line.txt, gX, line.pos.y);

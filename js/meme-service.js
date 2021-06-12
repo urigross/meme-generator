@@ -10,7 +10,8 @@ var gMeme = {
         txt: '',
         size: 40,
         align: 'center',
-        color: '#563d7c',
+        color: 'white',
+        strokeColor: 'black',
         pos: {
             y: 80
         },
