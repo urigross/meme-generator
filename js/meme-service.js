@@ -19,9 +19,10 @@ var gMeme = {
 };
 
 
-function getCurrEmptyLineIdx() {
-    return gMeme.lines.findIndex(line => (line.txt === ''));
-};
+
+// function getCurrEmptyLineIdx() {
+//     return gMeme.lines.findIndex(line => (line.txt === ''));
+// };
 
 
 function changeCurrLineColor(el) {
@@ -53,8 +54,12 @@ function lineYDown() {
         gMeme.lines[gMeme.selectedLineIdx].pos.y += 10;
 }
 
+function isCurrlineEmpty() {
+    return gMeme.lines[gMeme.selectedLineIdx].txt === '';
+};
 
 function addLine() {
+    if (isCurrlineEmpty()) return;
     _createNewLine();
     // place the new line below the current line
     gMeme.lines[gMeme.lines.length - 1].pos.y = getNewYpos();
@@ -95,10 +100,9 @@ function toggleLineIdx() {
 
 function updateFontSize(diff) {
     // Font size Validation
-    if (gMeme.lines[0].size > 80 && diff === 1) return;
-    if (gMeme.lines[0].size <= 10 && diff === -1) return;
-    gMeme.lines[0].size += diff * 10;
-    console.log('fontSize', gMeme.lines[0].size);
+    if (gMeme.lines[gMeme.selectedLineIdx].size > 80 && diff === 1) return;
+    if (gMeme.lines[gMeme.selectedLineIdx].size <= 10 && diff === -1) return;
+    gMeme.lines[gMeme.selectedLineIdx].size += diff * 10;
 };
 
 function updateCurrLineText(txt) {

@@ -29,7 +29,7 @@ function drawText() {
         gCtx.lineWidth = 2;
         gCtx.strokeStyle = line.color;
         gCtx.fillStyle = 'white';
-        gCtx.font = `${gMeme.lines[0].size}px Impact`;
+        gCtx.font = `${line.size}px Impact`;
         gCtx.textAlign = 'center';
         console.log('text: ', line.txt);
         gCtx.fillText(line.txt, gX, line.pos.y);
