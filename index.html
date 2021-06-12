@@ -17,9 +17,9 @@ rest of the  feat. -->
             <div class="header-menu grid1">
                 <img class="logo" onclick="onGallery()" src="images/LOGO.png">
                 <ul class=" nav-menu clean-list flex space-between">
-                    <li><a class="flex justify-center" onclick="onGallery()" href="#">Gallery</a></li>
-                    <li><a class="flex justify-center" href="#">Memes</a></li>
-                    <li><a class="flex justify-center" href="#">About</a></li>
+                    <li><a class="flex justify-center clean-list" onclick="onGallery()" href="#">Gallery</a></li>
+                    <li><a class="flex justify-center clean-list" href="#">Memes</a></li>
+                    <li><a class="flex justify-center clean-list" href="#">About</a></li>
                 </ul>
             </div>
         </nav>
@@ -53,7 +53,7 @@ rest of the  feat. -->
             <img src="images/ICONS/align-to-right.png" onclick="onTxtRignt()" alt="" class="text-right">
             <img src="images/ICONS/center-text-alignment.png" onclick="onTxtCenter()" alt="" class="text-center">
             <!-- <select class="flex justify-center change-font-ul" onchange="set(this.value)"> -->
-            <select class="change-font flex justify-center" onchange="onSetFontFam(value)">
+            <select class="change-font flex justify-center align-items-center" onchange="onSetFontFam(value)">
                     <option value="Impact"><h3>Impact</h3></option>
                     <option value="b612"><h3>B612</h3></option>
                     <option value="ibm"><h3>IBM Plex</h3></option>
@@ -63,7 +63,8 @@ rest of the  feat. -->
             <img src="images/ICONS/text stroke.png" alt="" onclick="onTextEffect()" class="text-effect">
             <!-- <img src="images/ICONS/paint-board-and-brush.png" onclick="onTxtColor()" alt="" class="text-color" type="color"> -->
             <input type="color" value="#FFFFFF" class="text-color" name="b-color" onchange="onTxtColor(this.value)">
-            <button class="share" onclick="onShare()">Share</button>
+            <a class="download clean-list flex justify-center align-items-center" onclick="downloadCanvas(this)" download="file-name">Download</a>
+            <button class="share flex justify-center align-items-center" onclick="onShare()">Share</button>
         </div>
     </div>
 </body>

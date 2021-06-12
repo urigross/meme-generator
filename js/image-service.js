@@ -1,5 +1,6 @@
 'use-strict';
 
+var gFileId = 101;
 var gKeywords = { 'happy': 12, 'funny puk': 1 };
 var gImgs = [
     { id: 1, url: 'img/trump.jpg', keywords: ['president', 'donald', 'trump', 'human', 'adult'] },
@@ -37,4 +38,11 @@ function getFilteredImages(val) {
     });
     return filteredImages;
 
+}
+
+function downloadCanvas(elLink) {
+    const data = gCanvas.toDataURL()
+    console.log('DATA', data);
+    elLink.href = data;
+    elLink.download = `myMeme${gFileId++}.jpg`;
 }
