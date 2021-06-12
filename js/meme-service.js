@@ -3,7 +3,6 @@ var gCanvas = document.querySelector('#my-canvas');
 var gCtx = gCanvas.getContext('2d');
 var fontSize = 20;
 var gX = 200;
-// var gY = 80;
 var gMeme = {
     selectedImgId: 0,
     selectedLineIdx: 0,
@@ -19,10 +18,6 @@ var gMeme = {
 };
 
 
-
-// function getCurrEmptyLineIdx() {
-//     return gMeme.lines.findIndex(line => (line.txt === ''));
-// };
 
 
 function changeCurrLineColor(el) {
@@ -66,7 +61,6 @@ function addLine() {
     // setting the new selected lineIdx on the new current line
     gMeme.selectedLineIdx = gMeme.lines.length - 1;
     console.log(gMeme);
-    // gMeme.lines.push(_returnNewLine());
 
 }
 // 80-380
@@ -76,12 +70,6 @@ function getNewYpos() {
 }
 
 
-// function addLine() {
-//     // the Current line will be the next emtpy line.
-//     gMeme.selectedLineIdx = gMeme.lines.findIndex(line => (line.txt === ''));
-//     // gMeme.lines.push(_returnNewLine());
-//     console.log(gMeme);
-// }
 
 function toggleLineIdx() {
     var nextLineIdx = gMeme.selectedLineIdx + 1;
@@ -89,13 +77,6 @@ function toggleLineIdx() {
 }
 
 
-// function toggleLineIdx() {
-//     //Erase current line & copy text to new line
-//     var txt = gMeme.lines[gMeme.selectedLineIdx].txt;
-//     gMeme.lines[gMeme.selectedLineIdx].txt = '';
-//     gMeme.selectedLineIdx === 3 ? gMeme.selectedLineIdx = 0 : gMeme.selectedLineIdx++;
-//     gMeme.lines[gMeme.selectedLineIdx].txt = txt;
-// }
 
 
 function updateFontSize(diff) {
@@ -108,7 +89,5 @@ function updateFontSize(diff) {
 function updateCurrLineText(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = ''; // static for now..
     gMeme.lines[gMeme.selectedLineIdx].txt = txt; // static for now..
-    // gMeme.lines[selectedLineIdx].txt = txt; later...
-
     //TODO: compelete
 };

@@ -1,8 +1,4 @@
 'use stirct';
-// function onTextLine(txt) {
-//     // drawText(txt, 180, 50);
-//     drawText()
-// }
 
 function clearInputVal() {
     var elInput = document.querySelector('.text-line');
@@ -29,20 +25,15 @@ function drawText() {
         gCtx.strokeStyle = line.color;
         gCtx.fillStyle = 'white';
         gCtx.font = `${line.size}px Impact`;
-        gCtx.textAlign = 'center';
-        console.log('text: ', line.txt);
+        gCtx.textAlign = line.align;
+        console.log('line.align', line.align);
         gCtx.fillText(line.txt, gX, line.pos.y);
         gCtx.strokeText(line.txt, gX, line.pos.y);
     });
 }
 
-// function getLineYAxis(idx) {
-//     var baseY = 80;
-//     return idx * 100 + baseY;
-// }
 
 function renderImage() {
-    // gCurrImageId = imageId;
     var img = new Image();
     img.src = `images/${gMeme.selectedImgId}.jpg`;
     img.onload = () => {
@@ -98,14 +89,8 @@ function onLineDown() {
     console.log('lineDown');
 }
 
-//TODO: remove toggling empty lines
 function onToggleRow() {
-    // var emptyLineIdx = getCurrEmptyLineIdx();
-
-    // if there is any empty line - If found - focus on it.
-    // if (emptyLineIdx === -1) {
     toggleLineIdx();
-    // } else gMeme.selectedLineIdx = emptyLineIdx;
     renderImage();
 }
 
@@ -134,15 +119,22 @@ function onFontDown() {
 }
 
 function onTxtLeft() {
-    console.log('Aligning text left');
+    updateTxtAlign('left');
+    renderImage();
 }
 
+function updateTxtAlign(direction) {
+    gMeme.lines[gMeme.selectedLineIdx].align = direction;
+};
+
 function onTxtRignt() {
-    console.log('Aligning text right');
+    updateTxtAlign('right');
+    renderImage();
 }
 
 function onTxtCenter() {
-    console.log('Centring txt');
+    updateTxtAlign('center');
+    renderImage();
 }
 
 function setFontFam(value) {
