@@ -1,11 +1,13 @@
 'use stirct';
-
-var gCurrImageId;
-
 // function onTextLine(txt) {
 //     // drawText(txt, 180, 50);
 //     drawText()
 // }
+
+function clearInputVal() {
+    var elInput = document.querySelector('.text-line');
+    elInput.value = '';
+};
 
 function drawText() {
     var idx = 0
@@ -15,22 +17,23 @@ function drawText() {
         gCtx.fillStyle = 'white';
         gCtx.font = `${gMeme.lines[0].size}px Impact`;
         gCtx.textAlign = 'center';
-        console.log(line.txt);
-        gCtx.fillText(line.txt, gX, getLineYAxis(idx));
-        gCtx.strokeText(line.txt, gX, getLineYAxis(idx));
+        console.log('text: ', line.txt);
+        gCtx.fillText(line.txt, gX, gMeme.lines[idx].pos.y);
+        gCtx.strokeText(line.txt, gX, gMeme.lines[idx].pos.y);
         idx++;
+        console.log('gMeme.lines[gMeme.selectedLineIdx].pos.y', gMeme.lines[gMeme.selectedLineIdx].pos.y)
     });
 }
 
-function getLineYAxis(idx) {
-    var baseY = 80;
-    return idx * 100 + baseY;
-}
+// function getLineYAxis(idx) {
+//     var baseY = 80;
+//     return idx * 100 + baseY;
+// }
 
-function renderImage(imageId) {
-    gCurrImageId = imageId;
+function renderImage() {
+    // gCurrImageId = imageId;
     var img = new Image();
-    img.src = `images/${imageId}.jpg`;
+    img.src = `images/${gMeme.selectedImgId}.jpg`;
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         drawText();
@@ -43,7 +46,9 @@ function onMemeEditor(imageId) {
     toggleCanvasContainerClass();
     toggleCanvasControls();
     updateCurrLineText('');
-    renderImage(imageId);
+    gMeme.selectedImgId = imageId;
+    renderImage();
+    // addLine();
 }
 
 
@@ -64,23 +69,36 @@ function toggleMyCanvasClass(hiddenState) {
 }
 
 
-
-
 function onType(txt) {
     updateCurrLineText(txt);
-    renderImage(gCurrImageId);
-    // TODO: compelete all functionality
+    renderImage();
 }
 
+function onLineUp() {
+    lineYup();
+    renderImage();
+    console.log('lineup');
+}
+
+
+function onLineDown() {
+    lineYDown();
+    renderImage();
+    console.log('lineDown');
+}
+
+// TODO: fix
 function onToggleRow() {
     console.log('toggle row');
     toggleLineIdx();
-    renderImage(gCurrImageId);
+    renderImage();
 }
 
 function onAddLine() {
+    clearInputVal();
     console.log('adding line');
     addLine();
+    renderImage();
 }
 
 function onDelRow() {
@@ -89,13 +107,13 @@ function onDelRow() {
 
 function onFontUp() {
     updateFontSize(1);
-    renderImage(gCurrImageId);
+    renderImage();
     console.log('increasing font');
 }
 
 function onFontDown() {
     updateFontSize(-1);
-    renderImage(gCurrImageId);
+    renderImage();
     console.log('Decreasing font');
 }
 
