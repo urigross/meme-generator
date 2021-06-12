@@ -26,7 +26,7 @@ function updateFontFam(fontFam) {
 
 
 function changeCurrLineColor(el) {
-    gMeme.lines[gMeme.selectedLineIdx].color = el;
+    gStrokeTxtState ? gMeme.lines[gMeme.selectedLineIdx].strokeColor = el : gMeme.lines[gMeme.selectedLineIdx].color = el;
 }
 
 function _createNewLine(txt = '', size = gMeme.lines[gMeme.selectedLineIdx].size, align = gMeme.lines[gMeme.selectedLineIdx].align,
