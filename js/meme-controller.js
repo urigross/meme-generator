@@ -114,8 +114,20 @@ function onAddLine() {
 }
 
 
-function onDelRow() {
+function onDelLine() {
     console.log('deleting row');
+    clearInputVal();
+    gMeme.lines[gMeme.selectedLineIdx].txt = '';
+    if (gMeme.lines.length >= 2)
+        delLine();
+
+    // if (gMeme.lines.length === 1) {
+    //     setLineToDefualts()
+    //     renderImage();
+    //     return;
+    // };
+    // delLine();
+    renderImage();
 }
 
 function onFontUp() {
