@@ -5,6 +5,15 @@ function clearInputVal() {
     elInput.value = '';
 };
 
+
+// function getElFontFam() {
+//     return document.querySelector('.change-font');
+// }
+
+// getElColor(){
+//     return 
+// }
+
 function drawRect() {
     if (gMeme.lines.length <= 1) return;
     gCtx.beginPath()
@@ -24,10 +33,9 @@ function drawText() {
     gMeme.lines.forEach(line => {
         gCtx.lineWidth = 2;
         gCtx.strokeStyle = line.color;
-        gCtx.fillStyle = 'white';
-        gCtx.font = `${line.size}px Impact`;
+        gCtx.fillStyle = line.color;
+        gCtx.font = `${line.size}px ${line.fontFam}`;
         gCtx.textAlign = line.align;
-        console.log('line.align', line.align);
         gCtx.fillText(line.txt, gX, line.pos.y);
         gCtx.strokeText(line.txt, gX, line.pos.y);
     });
@@ -45,6 +53,7 @@ function renderImage() {
 }
 
 function onMemeEditor(imageId) {
+    console.log('onMemeEditor');
     toggleSearchAreaClass();
     toggleImagesClass();
     toggleCanvasContainerClass();
@@ -73,31 +82,33 @@ function toggleMyCanvasClass(hiddenState) {
 
 
 function onType(txt) {
+    console.log('onType');
     updateCurrLineText(txt);
     renderImage();
 }
 
 function onLineUp() {
+    console.log('onLineUp');
     lineYup();
     renderImage();
-    console.log('lineup');
 }
 
 
 function onLineDown() {
+    console.log('onlineDown');
     lineYDown();
     renderImage();
-    console.log('lineDown');
 }
 
 function onToggleRow() {
+    console.log('onToggleRow');
     toggleLineIdx();
     renderImage();
 }
 
 function onAddLine() {
+    console.log('onAddLine');
     clearInputVal();
-    console.log('adding line');
     addLine();
     renderImage();
 }
@@ -108,18 +119,19 @@ function onDelRow() {
 }
 
 function onFontUp() {
+    console.log('increasing font');
     updateFontSize(1);
     renderImage();
-    console.log('increasing font');
 }
 
 function onFontDown() {
+    console.log('Decreasing font');
     updateFontSize(-1);
     renderImage();
-    console.log('Decreasing font');
 }
 
 function onTxtLeft() {
+    console.log('ontextleft');
     updateTxtAlign('right');
     renderImage();
 }
@@ -129,17 +141,21 @@ function updateTxtAlign(direction) {
 };
 
 function onTxtRignt() {
+    console.log('ontextright');
     updateTxtAlign('left');
     renderImage();
 }
 
 function onTxtCenter() {
+    console.log('ontextCenter');
     updateTxtAlign('center');
     renderImage();
 }
 
-function setFontFam(value) {
+function onSetFontFam(value) {
     console.log('changing font family to', value);
+    updateFontFam(value);
+    renderImage();
 }
 
 function onTextEffect() {

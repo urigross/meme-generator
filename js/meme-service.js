@@ -13,26 +13,31 @@ var gMeme = {
         color: '#563d7c',
         pos: {
             y: 80
-        }
+        },
+        fontFam: 'courier'
     }]
 };
 
 
+function updateFontFam(fontFam) {
+    gMeme.lines[gMeme.selectedLineIdx].fontFam = fontFam;
+}
 
 
 function changeCurrLineColor(el) {
     gMeme.lines[gMeme.selectedLineIdx].color = el;
 }
 
-function _createNewLine(txt = '', size = 20, align = 'left', color = '#563d7c') {
+function _createNewLine() {
     var meme = {
-        txt,
-        size,
-        align,
-        color,
+        txt: '',
+        size: gMeme.lines[gMeme.selectedLineIdx].size,
+        align: gMeme.lines[gMeme.selectedLineIdx].align,
+        color: gMeme.lines[gMeme.selectedLineIdx].color,
         pos: {
             y: 0
-        }
+        },
+        fontFam: gMeme.lines[gMeme.selectedLineIdx].fontFam
     };
     gMeme.lines.push(meme);
 };

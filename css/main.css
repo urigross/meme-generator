@@ -1,3 +1,18 @@
+@font-face {
+    font-family: b612;
+    src: url("/fonts/B612Mono-Regular.ttf");
+}
+
+@font-face {
+    font-family: ibm;
+    src: url("/fonts/IBMPlexMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: roboto;
+    src: url("/fonts/RobotoMono-Regular.ttf");
+}
+
 * {
     box-sizing: border-box;
 }
