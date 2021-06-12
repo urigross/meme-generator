@@ -5,20 +5,15 @@ function clearInputVal() {
     elInput.value = '';
 };
 
+// toggles strokeText option
+var gStrokeTxtState = false;
 
-// function getElFontFam() {
-//     return document.querySelector('.change-font');
-// }
 
-// getElColor(){
-//     return 
-// }
 
 function drawRect() {
     if (gMeme.lines.length <= 1) return;
     gCtx.beginPath()
     var rectY = gMeme.lines[gMeme.selectedLineIdx].pos.y - gMeme.lines[gMeme.selectedLineIdx].size * 1.1;
-    // var rectX = gCanvas.clientWidth / 2 - gMeme.lines[gMeme.selectedLineIdx].size * gMeme.lines[gMeme.selectedLineIdx].txt.length * 0.3;
     var rectX = 10;
     var rectWidth = gCanvas.clientWidth - 20;
     var rectHeight = 1.5 * gMeme.lines[gMeme.selectedLineIdx].size;
@@ -120,13 +115,6 @@ function onDelLine() {
     gMeme.lines[gMeme.selectedLineIdx].txt = '';
     if (gMeme.lines.length >= 2)
         delLine();
-
-    // if (gMeme.lines.length === 1) {
-    //     setLineToDefualts()
-    //     renderImage();
-    //     return;
-    // };
-    // delLine();
     renderImage();
 }
 
@@ -170,8 +158,17 @@ function onSetFontFam(value) {
     renderImage();
 }
 
-function onTextEffect() {
-    console.log('Text Effect');
+function onStrokeTxt() {
+    console.log('stroketxt');
+    _toggleStroketxt();
+}
+
+function _toggleStroketxt() {
+
+    gStrokeTxtState = !gStrokeTxtState;
+    var elStrokeTxt = document.querySelector('.stroke-txt');
+    console.log(elStrokeTxt);
+    elStrokeTxt.style.backgroundColor === "coral" ? elStrokeTxt.style.backgroundColor = "" : elStrokeTxt.style.backgroundColor = "coral";
 }
 
 function onTxtColor(el) {

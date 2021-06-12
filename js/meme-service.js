@@ -84,20 +84,6 @@ function delLine() {
     gMeme.selectedLineIdx = lastIdx - 1;
 }
 
-// function setLineToDefualts() {
-//     console.log(gMeme.lines);
-//     gMeme.lines.push(_createNewLine('kkk', 40, 'center', 'white', 'black', 'courier'));
-//     gMeme.lines.shift();
-//     gMeme.selectedLineIdx = 0;
-
-// };
-
-// function delLine() {
-//     var oldIdx = gMeme.selectedLineIdx;
-//     gMeme.lines.splice(gMeme.lines.selectedLineIdx, 1);
-//     gMeme.lines.selectedLineIdx = oldIdx + 1;
-// };
-
 
 
 function toggleLineIdx() {
@@ -116,7 +102,7 @@ function updateFontSize(diff) {
 };
 
 function updateCurrLineText(txt) {
-    gMeme.lines[gMeme.selectedLineIdx].txt = ''; // static for now..
-    gMeme.lines[gMeme.selectedLineIdx].txt = txt; // static for now..
-    //TODO: compelete
+    gMeme.lines[gMeme.selectedLineIdx].txt = '';
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt;
+    //TODO: 
 };

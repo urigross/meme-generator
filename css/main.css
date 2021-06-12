@@ -74,13 +74,6 @@ body h1 {
     background-color: rgb(248, 244, 244);
 }
 
-
-/* img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .image-container img {
     width: 100%;
     height: 100%;
@@ -114,12 +107,8 @@ body h1 {
 }
 
 .canvas-container {
-    /* margin: 20vh 30vw; */
     width: 500px;
     text-align: center;
-    /* margin-right: 10px; */
-    /* height: 450px; */
-    /* border: 1px solid red; */
 }
 
 
@@ -140,14 +129,9 @@ body h1 {
 .grid3 {
     display: grid;
     padding: 10px;
-    /* width: 450px; */
-    /* grid-template-columns:  100px 100px 100px; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: 100px 100px 100px 100px 100px; */
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "text-line text-line text-line text-line text-line" "line-up line-down toggle-row add-row delete-row" "font-up font-down text-left text-center text-right" "change-font change-font change-font text-effect text-color" "download download . share share";
-    /* grid-auto-rows: 250px; */
-    /* grid-auto-flow: dense; */
     background-color: rgb(248, 244, 244);
     gap: 7px;
     border: 1px solid blue;
@@ -210,7 +194,7 @@ body h1 {
     text-align: center;
 }
 
-.text-effect {
+.stroke-txt {
     grid-area: text-effect;
 }
 
@@ -219,27 +203,23 @@ body h1 {
 }
 
 .download {
+    background-image: url('/images/ICONS/download.jpg');
     grid-area: download;
     max-width: 120px;
-    border-radius: 10px;
-    font-size: larger;
-    border: 1px solid black;
+    height: 6.5vh;
 }
 
 .share {
-    border: 1px solid black;
-    border-radius: 10px;
-    font-size: larger;
+    background-image: url('/images/ICONS/share.jpg');
     grid-area: share;
     max-width: 120px;
-    margin-left: 30px;
+    margin-left: 20px;
+    height: 6.5vh;
 }
 
 .canvas-controls img {
     width: 50px;
     height: 50px;
-    border: 1px solid black;
-    border-radius: 10px;
     padding: 5px;
 }
 
