@@ -9,16 +9,21 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [{
         txt: '',
-        size: 20,
+        size: 40,
         align: 'left',
-        color: 'red',
+        color: '#563d7c',
         pos: {
             y: 80
         }
     }]
 };
 
-function _createNewLine(txt = '', size = 20, align = 'left', color = 'red') {
+
+function changeCurrLineColor(el) {
+    gMeme.lines[gMeme.selectedLineIdx].color = el;
+}
+
+function _createNewLine(txt = '', size = 20, align = 'left', color = '#563d7c') {
     var meme = {
         txt,
         size,
@@ -56,7 +61,7 @@ function addLine() {
 }
 // 80-380
 function getNewYpos() {
-    return gMeme.lines[gMeme.selectedLineIdx].pos.y >= 380 ? 80 : gMeme.lines[gMeme.selectedLineIdx].pos.y + 40;
+    return gMeme.lines[gMeme.selectedLineIdx].pos.y >= 380 ? 80 : gMeme.lines[gMeme.selectedLineIdx].pos.y + 80;
 
 }
 
