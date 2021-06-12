@@ -12,13 +12,12 @@ function clearInputVal() {
 function drawRect() {
     if (gMeme.lines.length <= 1) return;
     gCtx.beginPath()
-    var rectY = gMeme.lines[gMeme.selectedLineIdx].pos.y - 60;
-    var rectX = 10;
+    var rectY = gMeme.lines[gMeme.selectedLineIdx].pos.y - gMeme.lines[gMeme.selectedLineIdx].size * 1.1;
+    var rectX = gCanvas.clientWidth / 2 - gMeme.lines[gMeme.selectedLineIdx].size * gMeme.lines[gMeme.selectedLineIdx].txt.length * 0.3;
     var rectWidth = gCanvas.clientWidth - (rectX * 2);
+    var rectHeight = 1.5 * gMeme.lines[gMeme.selectedLineIdx].size;
     gCtx.lineWidth = 5;
-    gCtx.rect(rectX, rectY, rectWidth, 90);
-    // gCtx.fillStyle = 'orange'
-    // gCtx.fillRect(x, y, 150, 150)
+    gCtx.rect(rectX, rectY, rectWidth, rectHeight);
     gCtx.strokeStyle = 'green'
     gCtx.stroke();
 
