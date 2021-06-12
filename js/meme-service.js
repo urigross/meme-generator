@@ -9,7 +9,7 @@ var gMeme = {
     lines: [{
         txt: '',
         size: 40,
-        align: 'left',
+        align: 'center',
         color: '#563d7c',
         pos: {
             y: 80

@@ -120,7 +120,7 @@ function onFontDown() {
 }
 
 function onTxtLeft() {
-    updateTxtAlign('left');
+    updateTxtAlign('right');
     renderImage();
 }
 
@@ -129,7 +129,7 @@ function updateTxtAlign(direction) {
 };
 
 function onTxtRignt() {
-    updateTxtAlign('right');
+    updateTxtAlign('left');
     renderImage();
 }
 
