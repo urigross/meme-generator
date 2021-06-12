@@ -19,6 +19,11 @@ var gMeme = {
 };
 
 
+function getCurrEmptyLineIdx() {
+    return gMeme.lines.findIndex(line => (line.txt === ''));
+};
+
+
 function changeCurrLineColor(el) {
     gMeme.lines[gMeme.selectedLineIdx].color = el;
 }
@@ -74,7 +79,8 @@ function getNewYpos() {
 // }
 
 function toggleLineIdx() {
-    gMeme.selectedLineIdx + 1 === gMeme.lines.length ? gMeme.selectedLineIdx = 0 : gMeme.selectedLineIdx++;
+    var nextLineIdx = gMeme.selectedLineIdx + 1;
+    nextLineIdx === gMeme.lines.length || gMeme.lines[nextLineIdx].txt === '' ? gMeme.selectedLineIdx = 0 : gMeme.selectedLineIdx++;
 }
 
 

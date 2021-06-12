@@ -101,10 +101,12 @@ function onLineDown() {
 
 //TODO: remove toggling empty lines
 function onToggleRow() {
-    console.log('toggle row');
+    // var emptyLineIdx = getCurrEmptyLineIdx();
 
-    // drawRect();
+    // if there is any empty line - If found - focus on it.
+    // if (emptyLineIdx === -1) {
     toggleLineIdx();
+    // } else gMeme.selectedLineIdx = emptyLineIdx;
     renderImage();
 }
 
@@ -114,6 +116,7 @@ function onAddLine() {
     addLine();
     renderImage();
 }
+
 
 function onDelRow() {
     console.log('deleting row');
