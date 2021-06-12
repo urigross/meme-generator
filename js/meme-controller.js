@@ -9,6 +9,20 @@ function clearInputVal() {
     elInput.value = '';
 };
 
+function drawRect() {
+    gCtx.beginPath()
+    var rectY = gMeme.lines[gMeme.selectedLineIdx].pos.y - 80;
+    var rectX = 10;
+    var rectWidth = gCanvas.clientWidth - (rectX * 2);
+    gCtx.lineWidth = 5;
+    gCtx.rect(rectX, rectY, rectWidth, 100);
+    // gCtx.fillStyle = 'orange'
+    // gCtx.fillRect(x, y, 150, 150)
+    gCtx.strokeStyle = 'green'
+    gCtx.stroke();
+
+}
+
 function drawText() {
     var idx = 0
     gMeme.lines.forEach(line => {
@@ -37,6 +51,7 @@ function renderImage() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         drawText();
+        drawRect();
     }
 }
 
@@ -90,6 +105,8 @@ function onLineDown() {
 // TODO: fix
 function onToggleRow() {
     console.log('toggle row');
+
+    // drawRect();
     toggleLineIdx();
     renderImage();
 }

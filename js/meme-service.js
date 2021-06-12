@@ -68,15 +68,18 @@ function getNewYpos() {
 //     console.log(gMeme);
 // }
 
-
-
 function toggleLineIdx() {
-    //Erase current line & copy text to new line
-    var txt = gMeme.lines[gMeme.selectedLineIdx].txt;
-    gMeme.lines[gMeme.selectedLineIdx].txt = '';
-    gMeme.selectedLineIdx === 3 ? gMeme.selectedLineIdx = 0 : gMeme.selectedLineIdx++;
-    gMeme.lines[gMeme.selectedLineIdx].txt = txt;
+    gMeme.selectedLineIdx + 1 === gMeme.lines.length ? gMeme.selectedLineIdx = 0 : gMeme.selectedLineIdx++;
 }
+
+
+// function toggleLineIdx() {
+//     //Erase current line & copy text to new line
+//     var txt = gMeme.lines[gMeme.selectedLineIdx].txt;
+//     gMeme.lines[gMeme.selectedLineIdx].txt = '';
+//     gMeme.selectedLineIdx === 3 ? gMeme.selectedLineIdx = 0 : gMeme.selectedLineIdx++;
+//     gMeme.lines[gMeme.selectedLineIdx].txt = txt;
+// }
 
 
 function updateFontSize(diff) {
