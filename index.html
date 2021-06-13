@@ -10,7 +10,7 @@
 </head>
 
 <body onload="init()">
-    <section class="header">
+    <section class="header main-layout">
         <nav>
             <div class="header-menu grid1">
                 <img class="logo" onclick="onGallery()" src="images/LOGO.png">
@@ -22,19 +22,19 @@
             </div>
         </nav>
     </section>
-    <section class="aside search-area">
+    <section class="aside search-area main-layout">
         <nav>
             <input type="text" class="search-area-input" placeholder="SEARCH" onkeyup="onFilter(this.value)">
         </nav>
     </section>
-    <section class="main">
+    <section class="main main-layout">
         <div class="images grid2">
         </div>
     </section>
     <div class=" meme-generator flex">
         <div class="left-gap"></div>
         <div class="canvas-container" hidden>
-            <canvas id="my-canvas" height="400" width="400" hidden></canvas>
+            <canvas id="my-canvas" height="450" width="450"></canvas>
         </div>
         <div class="canvas-controls grid3">
             <input type="text" class="text-line" placeholder="Text-line" onkeyup="onType(this.value)">
@@ -55,9 +55,14 @@
                     <option value="roboto"><h3>Roboto Mono</h3></option>
                 </select>
             <img src="images/ICONS/text stroke.png" alt="" onclick="onStrokeTxt()" class="stroke-txt">
-            <input type="color" value="#FFFFFF" class="text-color" name="b-color" onchange="onTxtColor(this.value)">
-            <a class="download clean-list flex justify-center align-items-center" onclick="downloadCanvas(this)" download="file-name"></a>
-            <div class="share flex justify-center align-items-center" onclick="onShare()"></div>
+            <!-- color -->
+            <input type="color" value="#FFFFFF" class="text-color" id="color" name="b-color" onchange="onTxtColor(this.value)">
+            <label class="text-color-label" for="color">
+
+                <img src="/images//ICONS/paint-board-and-brush.png">
+            </label>
+            <a class="download clean-list flex justify-center align-items-center" onclick="downloadCanvas(this)" download="file-name">Download</a>
+            <div class="share flex justify-center align-items-center" onclick="onShare()">Share</div>
         </div>
     </div>
 </body>

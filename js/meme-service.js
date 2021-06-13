@@ -15,7 +15,7 @@ var gMeme = {
         pos: {
             y: 80
         },
-        fontFam: 'courier'
+        fontFam: 'impact'
     }]
 };
 
@@ -26,7 +26,7 @@ function updateFontFam(fontFam) {
 
 
 function changeCurrLineColor(el) {
-    gStrokeTxtState ? gMeme.lines[gMeme.selectedLineIdx].strokeColor = el : gMeme.lines[gMeme.selectedLineIdx].color = el;
+    gStrokeTxtState ? gMeme.lines[gMeme.selectedLineIdx].color = el : gMeme.lines[gMeme.selectedLineIdx].strokeColor = el;
 }
 
 function _createNewLine(txt = '', size = gMeme.lines[gMeme.selectedLineIdx].size, align = gMeme.lines[gMeme.selectedLineIdx].align,

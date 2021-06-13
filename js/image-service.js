@@ -1,5 +1,4 @@
 'use-strict';
-
 var gFileId = 101;
 var gKeywords = { 'happy': 12, 'funny puk': 1 };
 var gImgs = [

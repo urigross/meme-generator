@@ -16,7 +16,6 @@ function renderImageGallery(images) {
 };
 
 function onGallery() {
-    console.log('im in image gallery')
     toggleSearchAreaClass();
     toggleImagesClass();
     toggleCanvasContainerClass();
@@ -26,7 +25,6 @@ function onGallery() {
 
 
 
-// function hideSearch() {
 function toggleSearchAreaClass() {
     var eleSearch = document.querySelector('.search-area');
     eleSearch.style.display === 'none' ? eleSearch.style.display = 'block' : eleSearch.style.display = 'none';

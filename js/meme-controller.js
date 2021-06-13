@@ -7,7 +7,7 @@ function clearInputVal() {
 
 // toggles strokeText option
 var gStrokeTxtState = false;
-
+var gIsDownload = false
 
 
 function drawRect() {
@@ -26,7 +26,7 @@ function drawRect() {
 
 function drawText() {
     gMeme.lines.forEach(line => {
-        gCtx.lineWidth = 2;
+        gCtx.lineWidth = 1;
         gCtx.strokeStyle = line.color;
         gCtx.fillStyle = line.strokeColor;
         gCtx.font = `${line.size}px ${line.fontFam}`;
@@ -37,14 +37,18 @@ function drawText() {
 }
 
 
-function renderImage() {
+function renderImage(elLink = false) {
     var img = new Image();
     img.src = `images/${gMeme.selectedImgId}.jpg`;
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         drawText();
-        drawRect();
-    }
+        if (elLink) {
+            downloadCanvas(elLink);
+            elLink = false;
+        } else drawRect();
+        console.log('isdownload', elLink);
+    };
 }
 
 function onMemeEditor(imageId) {
@@ -58,16 +62,22 @@ function onMemeEditor(imageId) {
     renderImage();
 }
 
+function onDownloadCanvas() {
+    renderImage(elLink);
+
+    renderImage();
+}
+
 
 function toggleCanvasControls() {
     var elCanvasCtrs = document.querySelector('.canvas-controls');
-    !elCanvasCtrs.style.opacity ? elCanvasCtrs.style.opacity = "1" : elCanvasCtrs.style.opacity = "0";
+    if (elCanvasCtrs.style.opacity === '1') elCanvasCtrs.style.opacity = "0"
+    else elCanvasCtrs.style.opacity = "1";
 }
 
 function toggleCanvasContainerClass() {
     var elCanvas = document.querySelector('.canvas-container');
     elCanvas.hidden ? elCanvas.hidden = false : elCanvas.hidden = true;
-    toggleMyCanvasClass(elCanvas.hidden);
 };
 
 function toggleMyCanvasClass(hiddenState) {
@@ -159,7 +169,6 @@ function onSetFontFam(value) {
 }
 
 function onStrokeTxt() {
-    console.log('stroketxt');
     _toggleStroketxt();
 }
 
@@ -167,7 +176,6 @@ function _toggleStroketxt() {
 
     gStrokeTxtState = !gStrokeTxtState;
     var elStrokeTxt = document.querySelector('.stroke-txt');
-    console.log(elStrokeTxt);
     elStrokeTxt.style.backgroundColor === "coral" ? elStrokeTxt.style.backgroundColor = "" : elStrokeTxt.style.backgroundColor = "coral";
 }
 

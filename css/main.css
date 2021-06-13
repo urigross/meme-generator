@@ -13,6 +13,11 @@
     src: url("/fonts/RobotoMono-Regular.ttf");
 }
 
+@font-face {
+    font-family: montserrat;
+    src: url("/fonts/Montserrat-Regular.ttf");
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +33,13 @@ body h1 {
 }
 
 .header-menu {
+    margin-top: 5vh;
     border-bottom: 1px solid black;
+}
+
+.main-layout {
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 
@@ -53,20 +64,35 @@ body h1 {
     grid-column: 3/5;
 }
 
+.nav-menu li a {
+    font-family: montserrat, AdobeInvisFont, MyriadHebrew-Regular;
+}
+
 
 /* search gallery */
 
 .search-area-input {
-    margin-top: 2vh;
-    margin-left: 10vw;
+    margin-top: 7vh;
+    margin-left: 0vw;
     line-height: 3vh;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #dadada;
+    border-radius: 7px;
+    width: 15vw;
+}
+
+.search-area-input:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 
 /* image gallery */
 
 .grid2 {
-    margin-top: 2vh;
+    margin-top: 1vh;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: 250px;
@@ -79,6 +105,7 @@ body h1 {
     height: 100%;
     object-fit: cover;
     padding: 10px;
+    border-radius: 20px;
 }
 
 .image-container {
@@ -99,6 +126,7 @@ body h1 {
 }
 
 .meme-generator {
+    /* display: none; */
     margin-top: 10vh;
 }
 
@@ -111,6 +139,10 @@ body h1 {
     text-align: center;
 }
 
+#my-canvas {
+    border-radius: 10px;
+}
+
 
 /* canvas controls */
 
@@ -121,6 +153,7 @@ body h1 {
     /* margin-left: 20px; */
     width: 450px;
     height: 450px;
+    border-radius: 10px;
 }
 
 
@@ -131,20 +164,30 @@ body h1 {
     padding: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "text-line text-line text-line text-line text-line" "line-up line-down toggle-row add-row delete-row" "font-up font-down text-left text-center text-right" "change-font change-font change-font text-effect text-color" "download download . share share";
+    grid-template-areas: ". text-line text-line text-line ." "line-up line-down toggle-row add-row delete-row" "font-up font-down text-left text-center text-right" "change-font change-font . text-effect text-color" "download download . share share";
     background-color: rgb(248, 244, 244);
     gap: 7px;
-    border: 1px solid blue;
     justify-content: center;
 }
 
 .text-line {
     grid-area: text-line;
-    border: 1px solid red;
-    border-radius: 20px;
+    /* border: 1px solid black; */
+    /* border-radius: 20px; */
     line-height: 50px;
     font-size: larger;
+    height: 4vh;
+    margin-top: 5%;
     text-align: center;
+    border: 2px solid #dadada;
+    border-radius: 10px
+}
+
+.text-line:focus {
+    /* border: 1px solid red; */
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .line-up {
@@ -188,33 +231,54 @@ body h1 {
 }
 
 .change-font {
+    border-radius: 10px;
     grid-area: change-font;
     justify-content: center;
     font-size: larger;
     text-align: center;
+    height: 4vh;
+    margin-top: 0.8vh;
+    width: 11vw;
+    border: 2px solid #dadada;
+}
+
+.change-font:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .stroke-txt {
     grid-area: text-effect;
 }
 
-.text-color {
+.text-color-label {
     grid-area: text-color;
 }
 
+.text-color {
+    grid-area: text-color;
+    opacity: 0;
+}
+
 .download {
-    background-image: url('/images/ICONS/download.jpg');
     grid-area: download;
     max-width: 120px;
-    height: 6.5vh;
+    height: 6.4vh;
+    border-radius: 10px;
+    color: whitesmoke;
+    background-color: orange;
 }
 
 .share {
-    background-image: url('/images/ICONS/share.jpg');
+    /* background-image: url('/images/ICONS/share.png'); */
     grid-area: share;
     max-width: 120px;
     margin-left: 20px;
     height: 6.5vh;
+    border-radius: 10px;
+    background-color: orange;
+    color: whitesmoke;
 }
 
 .canvas-controls img {
