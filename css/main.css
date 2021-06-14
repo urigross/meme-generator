@@ -23,6 +23,28 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+/* pointers */
+
+.image-container img,
+.logo,
+.toggle-row,
+.add-row,
+.line-down,
+.line-up,
+.text-left,
+.text-right,
+.text-center,
+.font-down,
+.font-up,
+.delete-row,
+.canvas-controls img,
+.stroke-txt,
+.share,
+.download {
+    cursor: pointer;
+}
+
 body {
     background-image: url("../images/yello-meme-background.jpg");
     background-position: center center;
@@ -75,6 +97,14 @@ body h1 {
 
 .nav-menu li a {
     font-family: montserrat, AdobeInvisFont, MyriadHebrew-Regular;
+    font-size: 1.5em;
+    /* font-family: Monoton;
+    text-align: center;
+    padding-bottom: 1em; */
+}
+
+.nav-menu li:not(:last-child) {
+    /* padding-right: 5em; */
 }
 
 
@@ -89,6 +119,7 @@ body h1 {
     border: 2px solid #dadada;
     border-radius: 7px;
     width: 15vw;
+    font-family: montserrat, AdobeInvisFont, MyriadHebrew-Regular;
 }
 
 .search-area-input:focus {
@@ -115,6 +146,10 @@ body h1 {
     object-fit: cover;
     padding: 10px;
     border-radius: 20px;
+}
+
+.image-container img:hover {
+    /* to be continued */
 }
 
 .image-container {
