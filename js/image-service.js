@@ -40,7 +40,8 @@ function getFilteredImages(val) {
 }
 
 function onDownloadCanvas(elLink) {
-    renderImage(elLink);
+
+
     // renderImage(elLink).then(downloadCanvas(elLink));
 
 
@@ -51,4 +52,9 @@ function downloadCanvas(elLink) {
     console.log('DATA', data);
     elLink.href = data;
     elLink.download = `myMeme${gFileId++}.jpg`;
+    renderImage(false);
+    var elDownload1Btn = document.querySelector('.download1');
+    elDownload1Btn.style.display = "block";
+    var elDownload2Btn = document.querySelector('.download2 p');
+    elDownload2Btn.style.display = "none";
 }

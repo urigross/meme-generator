@@ -271,11 +271,14 @@ body h1 {
     text-align: center;
 }
 
+
+/* 
 .download2 {
+    display: none;
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 35px #9ecaed, 0 0 20px #497192;
-}
+} */
 
 .share {
     /* background-image: url('/images/ICONS/share.png'); */
