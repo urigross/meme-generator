@@ -5,17 +5,17 @@
 
 @font-face {
     font-family: ibm;
-    src: url("/fonts/IBMPlexMono-Regular.ttf");
+    src: url("../fonts/IBMPlexMono-Regular.ttf");
 }
 
 @font-face {
     font-family: roboto;
-    src: url("/fonts/RobotoMono-Regular.ttf");
+    src: url("../fonts/RobotoMono-Regular.ttf");
 }
 
 @font-face {
     font-family: montserrat;
-    src: url("/fonts/Montserrat-Regular.ttf");
+    src: url("../fonts/Montserrat-Regular.ttf");
 }
 
 * {
@@ -24,7 +24,7 @@
 }
 
 body {
-    background-image: url("/images/background.jpg");
+    background-image: url("../images/background.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
