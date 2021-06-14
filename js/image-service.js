@@ -39,6 +39,13 @@ function getFilteredImages(val) {
 
 }
 
+function onDownloadCanvas(elLink) {
+    renderImage(elLink);
+    // renderImage(elLink).then(downloadCanvas(elLink));
+
+
+}
+
 function downloadCanvas(elLink) {
     const data = gCanvas.toDataURL()
     console.log('DATA', data);

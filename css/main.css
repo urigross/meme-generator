@@ -268,6 +268,13 @@ body h1 {
     border-radius: 10px;
     color: whitesmoke;
     background-color: orange;
+    text-align: center;
+}
+
+.download2 {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 35px #9ecaed, 0 0 20px #497192;
 }
 
 .share {

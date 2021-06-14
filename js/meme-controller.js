@@ -37,17 +37,13 @@ function drawText() {
 }
 
 
-function renderImage(elLink = false) {
+function renderImage(forDownload = false) {
     var img = new Image();
     img.src = `images/${gMeme.selectedImgId}.jpg`;
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
         drawText();
-        if (elLink) {
-            downloadCanvas(elLink);
-            elLink = false;
-        } else drawRect();
-        console.log('isdownload', elLink);
+        if (!forDownload) drawRect();
     };
 }
 
@@ -62,11 +58,6 @@ function onMemeEditor(imageId) {
     renderImage();
 }
 
-function onDownloadCanvas() {
-    renderImage(elLink);
-
-    renderImage();
-}
 
 
 function toggleCanvasControls() {

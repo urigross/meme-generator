@@ -23,6 +23,14 @@ function onGallery() {
     renderImageGallery();
 }
 
+function preDownloadCanvas() {
+    renderImage(true);
+    var elDownload1Btn = document.querySelector('.download1');
+    elDownload1Btn.style.display = "none";
+    var elDownload2Btn = document.querySelector('.download2 p');
+    elDownload2Btn.style.display = "block";
+    //elDownload1Btn.innerText = "downloading";
+}
 
 
 function toggleSearchAreaClass() {
